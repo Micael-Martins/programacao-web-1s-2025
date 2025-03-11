@@ -2,7 +2,6 @@ let num1 = 10;
 let num2 = 5;
 let soma;
 
-
 soma = num1 + num2;
 sub = num1 - num2;
 mult = num1 * num2;
@@ -17,3 +16,5 @@ console.log(StringSoma)
 console.log(StringSub)
 console.log(StringMult)
 console.log(StringDiv)
+
+//Adicionei um comentário para testar o funcionamento do git no próprio computador
