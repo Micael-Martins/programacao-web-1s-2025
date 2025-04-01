@@ -4,7 +4,7 @@ const calculadora = require('./util/calculadora');
 
 const app = express();
 const PORT = 8080;
-// Esta definindo criando uma função express e informando a portal a qual esta função rodará
+// Esta definindo criando uma função express e informando a porta a qual esta função rodará
 
 app.get('/somar/:a/:b', (req, res) => {
     const { a, b } = req.params; // Provavelmente define onde o imput será guardado
