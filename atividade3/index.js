@@ -18,7 +18,7 @@ Em primeira mão, temos o app.get. Ao meu ver, ele define o que o
 usuário deve digitar para que o bloco funcione. Somar é a função, :a e :b são os parametros.
 Depois disso, criamos uma função que recebe os parametros req e res.
 Creio eu que req seja uma abreviação para request e res é de response.
-o resto da minha suposição do que cada coisa faz está comentado acima.
+O resto da minha suposição do que cada coisa faz está comentado acima.
 */
 
 app.get('/subtrair/:a/:b', (req, res) => {
