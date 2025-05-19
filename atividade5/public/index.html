@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento</title>
+</head>
+<body>
+<form action="/agendar" method="POST">
+    <div>
+        <h1 style="text-align: center;">
+            Agendamento
+        </h1>
+    </div>
+    <div>
+        <h2 style="margin-left: 5%; margin-bottom: 5%;">
+            Dados do paciente
+        </h2>
+    </div>
+    <div style="margin-left: 5%; display: flex; gap: 2%; width: 90%;"> 
+        <div style="flex: 1;">
+            <label for="Nome">Nome:</label><br>
+            <input type="text" id="Nome" name="nome" placeholder="..." style=" width: 90%; padding: 2%; margin-top: 1%;" required>
+        </div>
+        <div style="flex: 1;">
+            <label for="Sobrenome">Sobrenome:</label><br>
+            <input type="text" id="Sobrenome" name="sobrenome" placeholder="..." style="width: 90%; padding: 2%; margin-top: 1%;" required>
+          </div>
+    </div>
+    <div style="margin: 3% 0% 0% 5%; display: flex; gap: 2%; width: 90%;"> 
+        <div style="flex: 1;">
+            <label for="Cpf">CPF:</label><br>
+            <input type="text" inputmode="numeric" pattern="[0-9]*" id="CPF" name="cpf" placeholder="..." style=" width: 90%; padding: 2%; margin-top: 1%;" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+        </div>
+        <div style="flex: 1;">
+            <label for="Nascimento">Data de Nascimento:</label><br>
+            <input type="date" id="Nascimento" name="nascimento" placeholder="..." style="width: 91%; padding: 1.8%; margin-top: 1%;" required>
+          </div>
+          
+    </div>
+</div>
+<div style="margin: 3% 0% 0% 5%; display: flex; gap: 2%; width: 90%;"> 
+    <div style="flex: 1;">
+        <label for="tel">Telefone:</label><br>
+        <input type="tel" id="tel" name="telefone" placeholder="(xx) xxxxx-xxxx" style="width: 90%; padding: 2%; margin-top: 1%;" required>
+    </div>
+    <div style="flex: 1;">
+        <label for="cep">CEP:</label><br>
+        <input type="text" id="cep" name="cep" maxlength="9" placeholder="00000-000" oninput="formatCEP(this)" style="width: 90%; padding: 2%; margin-top: 1%;" required>
+      </div>
+      
+</div>
+<div style="margin: 3% 0% 0% 5%; width: 93%;"> 
+    <div>
+        <label for="End">Endereço:</label><br>
+        <input type="text" id="End" name="endereco" placeholder="..." style="width: 92%; padding: 1%; margin-top: 1%;" required>
+    </div>
+</div>
+<div>
+    <h2 style="margin-top: 5%; margin-left: 5%; margin-bottom: 5%;">
+        Dados da consulta
+    </h2>
+</div>
+<div style="margin-left: 5%; display: flex; gap: 2%; width: 90%;">
+    <div style="flex: 1;">
+        <label for="lista"> Clínicas disponíveis:</label><br>
+            <select name="clinica" id="lista" style="width: 90%; margin-top: 2%; margin-left: -1%;" required>
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option value="1">São José dos campos</option>
+                <option value="2">Health Plus</option>
+                <option value="3">Iri Neo Clinica</option>
+                <option value="4">Non Compens Clinica</option>
+                <option value="5">Dograsil em Clínica</option>
+            </select>
+    </div>
+    <div style="flex: 1;">
+        <label for="especialidade">Especialidade:</label><br>
+        <select name="especialidade" id="especialidade" style="width: 90%; margin-top: 2%; margin-left: -1%;" required>
+            <option value="" disabled selected>Selecione uma opção</option>
+            <option value="1">Ortopedia</option>
+            <option value="2">Pediatria</option>
+            <option value="3">Cardiologia</option>
+            <option value="4">Urologia</option>
+            <option value="5">Pneumologia</option>
+        </select>
+    </div>
+</div>
+<div style="margin: 3% 0% 0% 5%; display: flex; gap: 2%; width: 90%;">
+    <div style ="flex: 1;">
+        <label for="data">Data</label><br>
+        <input type="date" id="agendamento" name="agendamento" style="margin-top: 1%; width: 90%;"required>
+            <script>
+                const inputAgendamento = document.getElementById('agendamento');
+                const hoje = new Date().toISOString().split('T')[0];
+                inputAgendamento.min = hoje;
+            </script>
+    </div>
+    <div style ="flex: 1;">
+        <label for="hora">Hora</label><br>
+        <input type="time" id="hora" name="hora" style="margin-top: 1%; width: 92.5%;" required>
+    </div>
+</div>
+<div style="margin: 3% 0% 0% 5%; width: 93%;">
+    <div>
+        <label for="obs">Observações</label><br>
+        <input type="text" name="obs" id="obs" style="width: 93%;">
+    </div>
+</div>
+<div style="margin-top: 5%; margin-left: 5%">
+    <div>
+        <button type="submit" style="background-color: gray; width: 92%; border: none; padding: 2%; border-radius: 100px; font-weight: bold; color: white;">
+            Enviar formulário
+        </button>
+    </div>
+</div>
+</form>
+</body>
+</html>
